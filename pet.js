@@ -13,6 +13,7 @@ function startGame() {
 
 startGame();
 
+var stage1Bark = new Audio('Images/bark.mp3');
 
 let hand = "none";
 let timesFed = 0;
@@ -43,6 +44,7 @@ function bottleFeed() {
 
 function taurusPet() {
     taurusCurrentAction = "petting";
+    stage1Bark.play();
     document.getElementById('taurus').src = 'Images/taurus_stage1_pet.gif';
     timesPet++;
     setTimeout(() => { document.getElementById('taurus').src = 'Images/taurus_stage1.png'; taurusCurrentAction = null; }, 2000);
