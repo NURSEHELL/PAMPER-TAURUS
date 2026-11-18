@@ -1,8 +1,9 @@
 function startGame() {
     document.body.innerHTML =
         '<div onclick="taurusClick()">\
+<input id="Name" type="text" value="Taurus" placeholder="Please give Taurus a name!">\
 <img id="taurus" style = "width: 400px; height: auto;" src="Images/taurus_stage1.png">\
-	</div>\
+    </div>\
     <div>\
 <button onclick="grabBottle()">Feed!</button>\
 		<p>Times Fed: <span id="timesfed"> </span></p>\
@@ -13,8 +14,15 @@ function startGame() {
 
 startGame();
 
-var stage1Bark = new Audio('Images/bark.mp3');
+// Checks if Taurus has been renamed. Changes a blank name to "Taurus"
+const intervalId = setInterval(() => {
+    Name = document.getElementById("Name").value;
+    if (Name === "") {
+        Name = "Taurus";
+    }
+}, 1);
 
+var stage1Bark = new Audio('Images/bark.mp3');
 let hand = "none";
 let timesFed = 0;
 let timesPet = 0;
@@ -49,6 +57,7 @@ function taurusPet() {
     timesPet++;
     setTimeout(() => { document.getElementById('taurus').src = 'Images/taurus_stage1.png'; taurusCurrentAction = null; }, 2000);
     document.getElementById('timespet').innerHTML = timesPet;
+    console.log(Name);
 }
 
 function taurusClick() {
