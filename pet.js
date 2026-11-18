@@ -59,6 +59,11 @@ nameInput.addEventListener("input", (event) => {
 
         case "Aiden":
             taurusVariant = "Aiden";
+            break;
+
+        default:
+            taurusVariant = "Taurus";
+            break;
     }
     // Doesn't immediately switch sprites if animation is being performed
     if (taurusCurrentAction === null) {
