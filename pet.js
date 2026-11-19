@@ -1,16 +1,34 @@
 function startGame() {
     document.body.innerHTML =
-        '<div onclick="taurusClick()">\
-<input id="Name" type="text" value="Taurus" placeholder="Please give Taurus a name!">\
-<br>\
-<br>\
-<img id="taurus" style = "width: 400px; height: auto;" src="Images/taurus_stage1.png">\
-    </div>\
-    <div>\
-<button onclick="grabBottle()">Feed!</button>\
-		<p>Times Fed: <span id="timesfed"> </span></p>\
-        		<p>Times Petted: <span id="timespet"> </span></p>\
-	</div>';
+        '<div class="content">\
+      <div class="TaurusName">\
+        <input\
+          id="Name"\
+          type="text"\
+          value="Taurus"\
+          placeholder="Give Taurus a name!"\
+        />\
+      </div>\
+      <div class="middleSection">\
+        <div class="TaurusHabitat">\
+          <img\
+            id="taurus"\
+            style="width: 400px; height: auto"\
+            src="Images/taurus_stage1.png"\
+            onclick="taurusClick()"\
+          />\
+        </div>\
+      </div>\
+      <div class="TaurusButtons">\
+        <button onclick="grabBottle()">Feed!</button>\
+        <button onclick="grabToy()">WIP</button>\
+        <button onclick="BathStart()">WIP</button>\
+        <div class="Stats">\
+        <p> Times fed: <span id="timesfed"> </p>\
+        <p> Times pet: <span id="timespet"> </p>\
+        </div>\
+      </div >\
+    </div > '
 }
 
 
